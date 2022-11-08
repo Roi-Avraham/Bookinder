@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Bookinder</string>
+    <string name="login_etUsername">User name </string>
+    <string name="login_bt">Login</string>
+    <string name="not_register_click_here">Sigh Up</string>
+    <string name="login_etPassword">Password</string>
+    <string name="register_etUsername">Your name</string>
+    <string name="register_etUserNickname">User name</string>
+    <string name="register_etPassword">Password</string>
+    <string name="register_etConfirmPassword">Confirm the password</string>
+    <string name="register_bt">Register</string>
+    <string name="enter_your_phone_number">Enter your phone number</string>
+    <string name="sigh_up">Sigh Up</string>
+    <string name="welcome_to_bookinder">Welcome to Bookinder!</string>
+    <string name="let_us_know_you_better">let us know you better</string>
+    <string name="done">Done</string>
+    <string name="generes_and_interests">Generes and interests</string>
+    <string name="the_name_of_the_book">The name of the book</string>
+
 </resources>
