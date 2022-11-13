@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
+    android:background="@mipmap/background"
     >
 
     <LinearLayout
@@ -13,6 +14,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="20dp"
+        android:layout_marginBottom="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.727"
@@ -20,40 +22,45 @@
 
         <TextView
             android:id="@+id/sin"
-            android:layout_width="match_parent"
+            android:layout_width="150sp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
-            android:layout_marginStart="100dp"
-            android:textSize="50sp"
+            android:layout_marginTop="12sp"
+            android:layout_marginBottom="15sp"
+            android:textSize="30sp"
             android:ems="10"
+            android:layout_gravity="center"
             android:hint="@string/sigh_up"
             android:minHeight="48dp"
             android:textColorHint="@color/black" />
 
         <EditText
-            android:id="@+id/usernameInputBox"
+            android:background="@color/white"
+            android:id="@+id/signup_user_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:ems="10"
-            android:hint="@string/register_etUsername"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColorHint="@color/black"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:background="@color/white"
+            android:id="@+id/signup_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:ems="10"
+            android:hint="Email"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:textColorHint="@color/black" />
 
         <EditText
-            android:id="@+id/nicknameInputBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:ems="10"
-            android:hint="@string/register_etUserNickname"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:textColorHint="@color/black" />
-
-        <EditText
-            android:id="@+id/passwordInputBox"
+            android:background="@color/white"
+            android:id="@+id/signup_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -64,7 +71,8 @@
             android:textColorHint="@color/black" />
 
         <EditText
-            android:id="@+id/confirmPasswordInputBox"
+            android:background="@color/white"
+            android:id="@+id/signup_confirm_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -73,32 +81,44 @@
             android:inputType="textPassword"
             android:minHeight="48dp"
             android:textColorHint="@color/black" />
-
         <EditText
-            android:id="@+id/phoneNumberInputBox"
+            android:background="@color/white"
+            android:id="@+id/signup_age"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:ems="10"
-            android:hint="@string/enter_your_phone_number"
+            android:hint="Age"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textColorHint="@color/black" />
+        <EditText
+            android:background="@color/white"
+            android:id="@+id/signup_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:hint="Phone number"
             android:inputType="text"
             android:minHeight="48dp"
             android:textColorHint="@color/black" />
 
         <TextView
-            android:id="@+id/ErrorText"
+            android:id="@+id/move_to_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
             android:textAlignment="center"
             android:textAllCaps="true"
-            android:textColor="#BD0404"
-            android:textSize="24sp"
+            android:textSize="16sp"
+            android:layout_marginBottom="10dp"
+            android:textColorHint="@color/black"
             android:typeface="monospace"
-            tools:text="Test Text" />
+            android:hint="Already have an account?\n click here to login" />
 
         <Button
-            android:id="@+id/registerBtn"
+            android:id="@+id/signup_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

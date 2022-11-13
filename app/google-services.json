@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "912289499713",
+    "project_id": "bookinderapp",
+    "storage_bucket": "bookinderapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:912289499713:android:8d9351f52e0c35d4dbd4c0",
+        "android_client_info": {
+          "package_name": "com.example.bookinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "912289499713-13lft84gsisqp5jo9c6sd9p85f5etkj5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bookinder",
+            "certificate_hash": "de5c078b165327755efa9546f8d6d54e5d600102"
+          }
+        },
+        {
+          "client_id": "912289499713-aviirkb850kjbssdnesslkcl2snbiv9f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8suR8fsaAgafwoyWDdyDb9iDnnGuDL18"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "912289499713-aviirkb850kjbssdnesslkcl2snbiv9f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@mipmap/background">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="200dp"
+        app:layout_constraintVertical_bias="0.727"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:id="@+id/sin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50sp"
+            android:textSize="30sp"
+            android:ems="10"
+            android:hint="Add book you love"
+            android:minHeight="48dp"
+            android:textColorHint="@color/black" />
+
+        <EditText
+            android:background="@color/white"
+            android:id="@+id/name_of_the_book"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColorHint="@color/black"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:background="@color/white"
+            android:id="@+id/writer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:ems="10"
+            android:hint="Writer"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColorHint="@color/black"/>
+
+        <EditText
+            android:background="@color/white"
+            android:id="@+id/genre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:ems="10"
+            android:hint="Genre of the book"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:textColorHint="@color/black" />
+        <!--        <TextView-->
+        <!--            android:background="@color/background"-->
+        <!--            android:id="@+id/ErrorText"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:fontFamily="monospace"-->
+        <!--            android:textAlignment="center"-->
+        <!--            android:textAllCaps="true"-->
+        <!--            android:textColor="#BD0404"-->
+        <!--            android:textSize="24sp"-->
+        <!--            android:typeface="monospace"-->
+        <!--            tools:text="Test Text" />-->
+
+        <Button
+            android:id="@+id/adding_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="add" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

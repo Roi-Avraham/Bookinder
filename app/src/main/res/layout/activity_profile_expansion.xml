@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
+    android:background="@mipmap/background"
     >
 
     <LinearLayout
@@ -37,7 +38,7 @@
             android:layout_marginStart="85dp"
             android:layout_marginBottom="5dp"
             android:ems="10"
-            android:hint="@string/let_us_know_you_better"
+            android:hint="Let us know you better :)"
             android:minHeight="48dp"
             android:textColorHint="@color/black"
             android:textSize="20sp" />
@@ -46,7 +47,7 @@
             android:id="@+id/generes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="70sp"
+            android:layout_marginStart="85sp"
             android:ems="10"
             android:hint="@string/generes_and_interests"
             android:minHeight="48dp"
@@ -122,7 +123,7 @@
                 android:id="@+id/booksYouLike"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="70dp"
+                android:layout_marginStart="85sp"
                 android:ems="10"
                 android:hint="Enter Books you like"
                 android:minHeight="48dp"
