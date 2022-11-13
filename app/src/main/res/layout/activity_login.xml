@@ -4,11 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".Login.LoginActivity"
     android:orientation="vertical"
+    android:background="@mipmap/b"
     >
 
     <LinearLayout
+        android:background="@color/background"
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,19 +22,18 @@
         tools:layout_editor_absoluteX="0dp">
 
         <EditText
-            android:id="@+id/usernameInputBox"
+            android:id="@+id/login_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:ems="10"
-            android:hint="@string/login_etUsername"
-            android:inputType="textPersonName"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
             android:minHeight="70dp"
-            android:textColor="?attr/colorOnBackground"
-            android:textColorHint="?attr/colorOnSurface" />
-
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
         <EditText
-            android:id="@+id/passwordInputBox"
+            android:id="@+id/login_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -40,8 +41,8 @@
             android:hint="@string/login_etPassword"
             android:inputType="textPassword"
             android:minHeight="70dp"
-            android:textColor="?attr/colorOnBackground"
-            android:textColorHint="?attr/colorOnSurface" />
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
         <TextView
             android:id="@+id/ErrorText"
@@ -68,7 +69,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_logo" />
+        app:srcCompat="@mipmap/logo" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -81,7 +82,7 @@
         tools:layout_editor_absoluteX="0dp">
 
         <Button
-            android:id="@+id/loginBtn"
+            android:id="@+id/login_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
