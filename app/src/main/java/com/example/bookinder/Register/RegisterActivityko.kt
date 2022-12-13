@@ -6,7 +6,7 @@ import android.telephony.PhoneNumberUtils
 import android.text.TextUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.bookinder.Login.LoginActivity
+import com.example.bookinder.Login.LoginActivityKo
 import com.example.bookinder.R
 import com.example.bookinder.api.RetrofitClient
 import com.example.bookinder.models.DefaultResponse
@@ -15,13 +15,13 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class RegisterActivity : AppCompatActivity() {
+class RegisterActivityko : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
         move_to_login.setOnClickListener {
-            startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
+            startActivity(Intent(this@RegisterActivityko, LoginActivityKo::class.java))
         }
 
         signup_btn.setOnClickListener {

@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bookinder.MainActivity
 import com.example.bookinder.R
-import com.example.bookinder.Register.RegisterActivity
+import com.example.bookinder.Register.RegisterActivityko
 import com.example.bookinder.api.RetrofitClient
 import com.example.bookinder.models.LoginResponse
 import com.example.bookinder.storage.SharedPrefManager
@@ -15,13 +15,13 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivityKo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
         signinBtn.setOnClickListener{
-            startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
+            startActivity(Intent(this@LoginActivityKo, RegisterActivityko::class.java))
         }
 
         login_btn.setOnClickListener{

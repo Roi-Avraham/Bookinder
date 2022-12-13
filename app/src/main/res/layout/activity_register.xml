@@ -103,6 +103,15 @@
             android:inputType="text"
             android:minHeight="48dp"
             android:textColorHint="@color/black" />
+        <TextView
+            android:id="@+id/responseTextRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="#FF0000"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/move_to_login"
