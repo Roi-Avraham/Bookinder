@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         String password = passwordView.getText().toString().trim();
 
         if (username.length() == 0 || password.length() == 0) {
-            Toast.makeText(getApplicationContext(), "Something is wrong. Please check your inputs.", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Email or password can not be empty. Please check your inputs.", Toast.LENGTH_LONG).show();
             return;
         }
 

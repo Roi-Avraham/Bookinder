@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.bookinder.Login.LoginActivity;
 import com.example.bookinder.MainActivity;
+import com.example.bookinder.ProfileExpansion.ProfileExpansion;
 import com.example.bookinder.R;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -58,7 +59,38 @@ public class RegisterActivity extends AppCompatActivity {
         String confirmPassword = confirmPasswordView.getText().toString().trim();
         String age = ageView.getText().toString().trim();
 
-        if (name.length() == 0) {
+        boolean flag = true;
+        if(name.length() == 0) {
+            nameView.setError("Name is required");
+            flag = false;
+        }
+        if(username.length() == 0) {
+            usernameView.setError("Email is required");
+            flag = false;
+        }
+        if(password.length() == 0) {
+            passwordView.setError("Password is required");
+            flag = false;
+        }
+        if(confirmPassword.length() == 0) {
+            confirmPasswordView.setError("You must confirm your password");
+            flag = false;
+        }
+        if(!password.equals(confirmPassword)) {
+            confirmPasswordView.setError("The password must be the same");
+            flag = false;
+        }
+        if(age.length() == 0) {
+            ageView.setError("Age is required");
+            flag = false;
+        }
+        if(phone.length() == 0) {
+            phoneView.setError("Phone number is required");
+            flag = false;
+        }
+
+
+        if (!flag) {
             Toast.makeText(getApplicationContext(), "Something is wrong. Please check your inputs.", Toast.LENGTH_LONG).show();
         } else {
             JSONObject registrationForm = new JSONObject();
@@ -114,13 +146,13 @@ public class RegisterActivity extends AppCompatActivity {
                         public void run() {
                             if (responseString.equals("success")) {
                                 responseTextRegister.setText("Registration completed successfully.");
-                                Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                                Intent intent = new Intent(RegisterActivity.this, ProfileExpansion.class);
                                 startActivity(intent);
                                 finish();
                             } else if (responseString.equals("Another user used this email. Please chose another email.")) {
-                                responseTextRegister.setText("Username already exists. Please chose another username.");
+                                responseTextRegister.setText("Email already exists. Please chose another email.");
                             } else {
-                                responseTextRegister.setText("Something went wrong. Please try again later. semec");
+                                responseTextRegister.setText("Something went wrong. Please try again later.");
                             }
                         }
                     });
