@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#F0F7F7"
+    android:padding="5dp"
+    android:id="@+id/template_row">
+    <TextView
+        android:id="@+id/name_of_the_book"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="" />
+</TableRow>
+
+
+
+
+
+
+
+
+

@@ -18,6 +18,7 @@
         <activity
             android:name=".UploadBook.UplodingBook"
             android:exported="true">
+
         </activity>
         <activity
             android:name=".UploadBook.UploadingBooksManually"
@@ -30,11 +31,11 @@
         <activity
             android:name=".ProfileExpansion.ProfileExpansion"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UploadBook.ScanShelfActivity"
+            android:exported="true">
         </activity>
         <activity
             android:name=".Register.RegisterActivityko"
@@ -51,7 +52,11 @@
         </activity>
         <activity android:name=".Login.LoginActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".Register.RegisterActivity"
             android:exported="true">
@@ -60,6 +65,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
+
         </activity>
     </application>
 

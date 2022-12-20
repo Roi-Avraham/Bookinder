@@ -37,6 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         Button Register = (Button) findViewById(R.id.signup_btn);
+
         Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,13 +47,14 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void register(View v) {
         EditText usernameView = findViewById(R.id.signup_email);
+        String username = usernameView.getText().toString().trim();
         EditText nameView = findViewById(R.id.signup_user_name);
         EditText phoneView = findViewById(R.id.signup_phone);
         EditText passwordView = findViewById(R.id.signup_password);
         EditText ageView = findViewById(R.id.signup_age);
         EditText confirmPasswordView = findViewById(R.id.signup_confirm_password);
 
-        String username = usernameView.getText().toString().trim();
+
         String name = nameView.getText().toString().trim();
         String phone = phoneView.getText().toString().trim();
         String password = passwordView.getText().toString().trim();
@@ -146,7 +148,10 @@ public class RegisterActivity extends AppCompatActivity {
                         public void run() {
                             if (responseString.equals("success")) {
                                 responseTextRegister.setText("Registration completed successfully.");
+                                EditText usernameView = findViewById(R.id.signup_email);
+                                String username = usernameView.getText().toString().trim();
                                 Intent intent = new Intent(RegisterActivity.this, ProfileExpansion.class);
+                                intent.putExtra("current_user",username);
                                 startActivity(intent);
                                 finish();
                             } else if (responseString.equals("Another user used this email. Please chose another email.")) {

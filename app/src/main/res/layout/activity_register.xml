@@ -28,7 +28,7 @@
             android:textSize="30sp"
             android:ems="10"
             android:layout_gravity="center"
-            android:hint="@string/sigh_up"
+            android:hint="Sign up"
             android:minHeight="48dp"
             android:textColorHint="@color/black" />
 

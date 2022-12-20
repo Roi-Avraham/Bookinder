@@ -60,21 +60,32 @@
             android:layout_marginBottom="20dp"
             android:ems="10"
             android:hint="Genre of the book"
-            android:inputType="textPassword"
+            android:inputType="text"
             android:minHeight="48dp"
             android:textColorHint="@color/black" />
-        <!--        <TextView-->
-        <!--            android:background="@color/background"-->
-        <!--            android:id="@+id/ErrorText"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:fontFamily="monospace"-->
-        <!--            android:textAlignment="center"-->
-        <!--            android:textAllCaps="true"-->
-        <!--            android:textColor="#BD0404"-->
-        <!--            android:textSize="24sp"-->
-        <!--            android:typeface="monospace"-->
-        <!--            tools:text="Test Text" />-->
+        <EditText
+            android:background="@color/white"
+            android:id="@+id/rate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:ems="10"
+            android:hint="Rate the book (1-5)"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textColorHint="@color/black" />
+<!--                <TextView-->
+<!--                    android:background="@color/background"-->
+<!--                    android:id="@+id/ErrorText"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="monospace"-->
+<!--                    android:textAlignment="center"-->
+<!--                    android:textAllCaps="true"-->
+<!--                    android:textColor="#BD0404"-->
+<!--                    android:textSize="24sp"-->
+<!--                    android:typeface="monospace"-->
+<!--                    tools:text="Test Text" />-->
 
         <Button
             android:id="@+id/adding_btn"
