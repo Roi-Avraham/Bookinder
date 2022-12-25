@@ -6,14 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:background="@mipmap/background"
-    >
-
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scrollbars="none">
-
+    android:background="@mipmap/background">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,6 +24,7 @@
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="10dp"
                 android:ems="10"
+                android:textStyle="bold"
                 android:hint="@string/welcome_to_bookinder"
                 android:minHeight="48dp"
                 android:textColorHint="@color/black"
@@ -43,183 +37,209 @@
                 android:layout_marginStart="85dp"
                 android:layout_marginBottom="5dp"
                 android:ems="10"
+                android:textStyle="bold"
                 android:hint="Let us know you better :)"
                 android:minHeight="48dp"
                 android:textColorHint="@color/black"
                 android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/generes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="85sp"
-                android:ems="10"
-                android:hint="@string/generes_and_interests"
-                android:minHeight="48dp"
-                android:textColorHint="@color/black"
-                android:textSize="20sp" />
-
-            <LinearLayout
+            <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintVertical_bias="0.877"
-                tools:layout_editor_absoluteX="dp">
-
-                <CheckBox
-                    android:id="@+id/checkBox1"
-                    android:layout_width="wrap_content"
+                android:scrollbars="none">
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="Novel"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:layout_editor_absoluteX="0dp">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        xmlns:card_view="http://schemas.android.com/tools"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="10dp"
+                        app:cardUseCompatPadding="true"
+                        card_view:cardCornerRAdius="5dp">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintVertical_bias="0.877"
+                            tools:layout_editor_absoluteX="dp">
+                    <TextView
+                        android:id="@+id/generes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50sp"
+                        android:ems="10"
+                        android:hint="@string/generes_and_interests"
+                        android:minHeight="48dp"
+                        android:textColorHint="@color/black"
+                        android:textSize="20sp" />
 
-                <CheckBox
-                    android:id="@+id/checkBox2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="History"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintVertical_bias="0.877"
+                            tools:layout_editor_absoluteX="dp">
 
-                <CheckBox
-                    android:id="@+id/checkBox3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="Thriller"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </LinearLayout>
+                        <CheckBox
+                            android:id="@+id/checkBox1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="Novel"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintVertical_bias="0.877"
-                tools:layout_editor_absoluteX="0dp">
+                        <CheckBox
+                            android:id="@+id/checkBox2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="History"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                <CheckBox
-                    android:id="@+id/checkBox4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="Science"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                        <CheckBox
+                            android:id="@+id/checkBox3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="Thriller"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
 
-                <CheckBox
-                    android:id="@+id/checkBox5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="Fantasy"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintVertical_bias="0.877"
+                        tools:layout_editor_absoluteX="0dp">
 
-                <CheckBox
-                    android:id="@+id/checkBox6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="Children"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </LinearLayout>
+                        <CheckBox
+                            android:id="@+id/checkBox4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="Science"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                        <CheckBox
+                            android:id="@+id/checkBox5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="Fantasy"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/booksYouLike"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="85sp"
-                    android:ems="10"
-                    android:hint="Enter Books you like"
-                    android:minHeight="48dp"
-                    android:textColorHint="@color/black"
-                    android:textSize="20sp" />
-            </LinearLayout>
+                        <CheckBox
+                            android:id="@+id/checkBox6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="Children"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/booksYouLike"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="85sp"
+                            android:ems="10"
+                            android:hint="Enter Books you like"
+                            android:minHeight="48dp"
+                            android:textColorHint="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
 
-                <Button
-                    android:id="@+id/enterManually"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:text="manually"
-                    android:textSize="20sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/scan_a_shelf"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="20dp"
-                    android:text="scan a shelf"
-                    android:textSize="20sp"
-                    app:icon="@drawable/ic_camera" />
-            </LinearLayout>
+                        <Button
+                            android:id="@+id/enterManually"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:text="manually"
+                            android:textSize="20sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                        <Button
+                            android:id="@+id/scan_a_shelf"
+                            android:layout_width="172dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="20dp"
+                            android:text="scan a shelf"
+                            android:textSize="20sp"
+                            app:icon="@drawable/ic_camera" />
+                    </LinearLayout>
 
-                <TextView
-                    android:id="@+id/profile_picture"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="90sp"
-                    android:ems="10"
-                    android:hint="Add a profile picture"
-                    android:minHeight="48dp"
-                    android:textColorHint="@color/black"
-                    android:textSize="20sp" />
-            </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/profile_picture"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="90sp"
+                            android:ems="10"
+                            android:hint="Add a profile picture"
+                            android:minHeight="48dp"
+                            android:textColorHint="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
 
-                <Button
-                    android:id="@+id/upload"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="140dp"
-                    app:icon="@drawable/ic_upload"
-                    app:iconSize="50dp" />
-            </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
-<!--            <ImageView-->
-<!--                android:id="@+id/profileImage"-->
-<!--                android:layout_width="150sp"-->
-<!--                android:layout_height="150sp"-->
-<!--                android:scaleType="centerCrop"/>-->
-            <com.mikhaellopez.circularimageview.CircularImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                app:civ_border_width="4dp"
-                android:layout_gravity="center"
-                android:id="@+id/profileImage" />
+                        <Button
+                            android:id="@+id/upload"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="125dp"
+                            app:icon="@drawable/ic_upload"
+                            app:iconSize="50dp" />
+                    </LinearLayout>
 
 
-            <Button
-                android:id="@+id/doneBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/done" />
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:id="@+id/profileImage"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        app:civ_border_width="4dp" />
+
+
+                    <Button
+                        android:id="@+id/doneBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/done" />
+                </LinearLayout>
+            </ScrollView>
         </LinearLayout>
-    </ScrollView>
 </RelativeLayout>

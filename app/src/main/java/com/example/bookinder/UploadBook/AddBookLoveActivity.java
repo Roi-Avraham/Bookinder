@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,11 +30,33 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class AddBookLoveActivity extends AppCompatActivity {
-
+    Spinner genreSpinner;
+    Spinner rateSpinner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_book_love);
+
+        //get the spinner from the xml.
+        genreSpinner = findViewById(R.id.spinner1);
+        //create a list of items for the spinner.
+        String[] items = new String[]{"Novel", "History", "Thriller","Science","Fantasy","Children"};
+        //create an adapter to describe how the items are displayed, adapters are used in several places in android.
+        //There are multiple variations of this, but this is the basic variant.
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        //set the spinners adapter to the previously created one.
+        genreSpinner.setAdapter(adapter);
+
+        //get the spinner from the xml.
+        rateSpinner = findViewById(R.id.spinner2);
+        //create a list of items for the spinner.
+        String[] rates = new String[]{"1", "2", "3","4","5"};
+        //create an adapter to describe how the items are displayed, adapters are used in several places in android.
+        //There are multiple variations of this, but this is the basic variant.
+        ArrayAdapter<String> adapterRates = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, rates);
+        //set the spinners adapter to the previously created one.
+        rateSpinner.setAdapter(adapterRates);
+
 
         Button add = findViewById(R.id.adding_btn);
         add.setOnClickListener(new View.OnClickListener() {
@@ -52,13 +76,12 @@ public class AddBookLoveActivity extends AppCompatActivity {
         String current_user = intent.getStringExtra("current_user");
         EditText name_of_bookV = findViewById(R.id.name_of_the_book);
         EditText name_of_writerV = findViewById(R.id.writer);
-        EditText genreV = findViewById(R.id.genre);
-        EditText rateV = findViewById(R.id.rate);
+
 
         String name_of_book = name_of_bookV.getText().toString().trim();
         String name_of_writer = name_of_writerV.getText().toString().trim();
-        String genre = genreV.getText().toString().trim();
-        String rate = rateV.getText().toString().trim();
+        String genre =String.valueOf(genreSpinner.getSelectedItem());
+        String rate = String.valueOf(rateSpinner.getSelectedItem());
 
 
         JSONObject addingForm = new JSONObject();
@@ -74,7 +97,7 @@ public class AddBookLoveActivity extends AppCompatActivity {
 
         RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), addingForm.toString());
 
-        postRequest("http://192.168.1.169:5000/addbookmanually", body);
+        postRequest("http://192.168.1.170:5000/addbookmanually", body);
     }
 
     public void postRequest(String postUrl, RequestBody postBody) {

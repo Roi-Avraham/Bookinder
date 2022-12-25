@@ -22,26 +22,77 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/Bookinder/app/src/main/res/layout/activity_uploding_book.xml" value="0.22" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Bookinder/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1796875" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Bookinder/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1305" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/drawable/book_icon.xml" value="0.16" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/drawable/cart_icon.xml" value="0.16" />
         <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/drawable/chat_icon.xml" value="0.1" />
         <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/drawable/home_icon.xml" value="0.1" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/drawable/ic_action_name.xml" value="0.1395" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/drawable/ic_add.xml" value="0.1" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/drawable/ic_arrow.xml" value="0.187" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.188" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/drawable/ic_baseline_menu_book_24.xml" value="0.16" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/drawable/ic_email.xml" value="0.1" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/drawable/ic_notification.xml" value="0.1" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/drawable/ic_outline_chat_24.xml" value="0.188" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/drawable/ic_person.xml" value="0.1" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/drawable/ic_phone.xml" value="0.1" />
         <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/drawable/nav_item_color_selected.xml" value="0.173" />
         <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/font/roboto_regular.xml" value="0.20989583333333334" />
         <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/activity_add_book_love.xml" value="0.1346153846153846" />
         <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/activity_list_of_scanned_books.xml" value="0.13333333333333333" />
         <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/activity_list_scanned_books.xml" value="0.17864583333333334" />
-        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/activity_my_profile.xml" value="0.13177083333333334" />
         <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/activity_profile_expansion.xml" value="0.22" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/activity_profile_page.xml" value="0.22" />
         <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/activity_register.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/activity_scan_a_shelf.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/activity_test.xml" value="0.22" />
         <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/activity_upload_manually.xml" value="0.25" />
-        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/activity_uploding_book.xml" value="0.12" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/activity_uploding_book.xml" value="0.22" />
         <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/activity_uploud_manually.xml" value="0.1640625" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/app_bar_main.xml" value="0.122265625" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/app_bar_my_profile.xml" value="0.13177083333333334" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/app_bar_test.xml" value="0.1796875" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/book_detail_exchange.xml" value="0.1484375" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/book_detail_sale.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/books_for_exchange.xml" value="0.1465811965811966" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/books_for_sale.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/buttonstyle.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/content_my_profile.xml" value="0.13177083333333334" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/content_test.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/fragment_books_for_exchange.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/fragment_books_for_sale.xml" value="0.13072916666666667" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/fragment_gallery.xml" value="0.12760416666666666" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/fragment_home.xml" value="0.1796875" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/fragment_profile.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/fragment_slideshow.xml" value="0.1796875" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/fragment_wishlist.xml" value="0.1141025641025641" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/item_add.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/item_book.xml" value="0.22" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/item_email.xml" value="0.1796875" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/item_favorite_books.xml" value="0.1796875" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/item_image.xml" value="0.22" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/item_info.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/list_view_item_row.xml" value="0.16302083333333334" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/nav_header_main.xml" value="0.1" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/nav_header_my_profile.xml" value="0.13177083333333334" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/nav_header_test.xml" value="0.1796875" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/other_profile.xml" value="0.22" />
         <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/recycle_book_love.xml" value="0.1640625" />
         <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/recycle_row.xml" value="0.12552083333333333" />
         <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/recycle_row_scanning.xml" value="0.16302083333333334" />
         <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/recycle_scanning.xml" value="0.17864583333333334" />
-        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/scan_shelf_test.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/layout/toolbar.xml" value="0.16302083333333334" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/menu/activity_main_drawer.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/menu/bottom_nav_menu.xml" value="0.22" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/menu/my_profile.xml" value="0.13177083333333334" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/menu/proffile_nav_menu.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/menu/profile_nav_menu.xml" value="0.15364583333333334" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/menu/profile_other_nav_menu.xml" value="0.15260416666666668" />
+        <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/menu/test.xml" value="0.1" />
         <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="..\:/Users/user/StudioProjects/Bookinder/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.188" />
       </map>

@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.bookinder.MyProfile.MyProfileActivity;
+import com.example.bookinder.MyProfile.ui.Profile.ProfileFragment;
+import com.example.bookinder.Profile.Profile_activity;
 import com.example.bookinder.ProfileExpansion.ProfileExpansion;
 import com.example.bookinder.UploadBook.UploadingBooksManually;
 import com.example.bookinder.UploadBook.UplodingBook;
@@ -31,10 +34,14 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
+        Intent intent;
         switch (item.getItemId()) {
             case R.id.nav_cart:
-                Intent intent = new  Intent(MainActivity.this, UplodingBook.class);
+                intent = new  Intent(MainActivity.this, UplodingBook.class);
+                MainActivity.this.startActivity(intent);
+                return true;
+            case R.id.nav_person:
+                intent = new  Intent(MainActivity.this, MyProfileActivity.class);
                 MainActivity.this.startActivity(intent);
                 return true;
         }

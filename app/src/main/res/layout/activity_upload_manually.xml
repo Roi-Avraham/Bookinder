@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:layout_gravity="right"
-        android:src="@drawable/ic_action_name"
+        android:src="@drawable/ic_baseline_plus_one_24"
         tools:layout_editor_absoluteX="322dp"
         tools:layout_editor_absoluteY="513dp"
         android:contentDescription="plusOne" />

@@ -5,27 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/background">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="20dp"
-        android:layout_marginBottom="450sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.727"
+        app:layout_constraintVertical_bias="0.052"
         tools:layout_editor_absoluteX="0dp">
-    <TextView
-        android:id="@+id/sin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40sp"
-        android:layout_marginStart="85sp"
-        android:textSize="30sp"
-        android:ems="10"
-        android:hint="Scan a shelf"
-        android:minHeight="48dp"
-        android:textColorHint="@color/black" />
+
+        <TextView
+            android:id="@+id/sin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100sp"
+            android:layout_marginBottom="40sp"
+            android:ems="10"
+            android:minHeight="48dp"
+            android:text="Scan a shelf"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_margin="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </androidx.recyclerview.widget.RecyclerView>
+
         <Button
             android:id="@+id/signup_btn"
             android:layout_width="wrap_content"
@@ -39,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        app:srcCompat="@drawable/ic_action_name"
+        android:src="@drawable/ic_baseline_plus_one_24"
         tools:layout_editor_absoluteX="335dp"
         tools:layout_editor_absoluteY="512dp"
         tools:ignore="MissingConstraints" />

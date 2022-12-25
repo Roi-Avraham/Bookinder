@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_twotone_man_24"
+        android:title="@string/menu_home" />
+    <item
+        android:id="@+id/booksForSaleFragment"
+        android:title="My books for sale"
+        android:icon="@drawable/ic_outline_shopping_cart_black"
+        />
+    <item
+        android:id="@+id/booksForExchangeFragment"
+        android:title="My books for exchange"
+        android:icon="@drawable/ic_baseline_compare_arrows_24"
+        />
+    <item
+        android:id="@+id/wishlistFragment"
+        android:title="Wishlist"
+        android:icon="@drawable/ic_sharp_favorite_24"/>
+    <item
+        android:id="@+id/nav_setting"
+        android:title="Settings" />
+</group>
+</menu>

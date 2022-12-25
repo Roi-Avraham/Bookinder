@@ -73,7 +73,7 @@ public class UploadingBooksManually extends AppCompatActivity {
         }
         RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), UploadingForm.toString());
 
-        postRequest("http://192.168.1.169:5000/getBooksYouEntered", body);
+        postRequest("http://192.168.1.170:5000/getBooksYouEntered", body);
     }
 
     public void postRequest(String postUrl, RequestBody postBody) {

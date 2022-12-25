@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation2"
+    app:startDestination="@id/nav_profile">
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.bookinder.MyProfile.ui.Profile.ProfileFragment"
+        android:label="My profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/booksForSaleFragment"
+        android:name="com.example.bookinder.MyProfile.ui.BooksForSale.BooksForSaleFragment"
+        android:label="My books for sale"
+        tools:layout="@layout/fragment_books_for_sale" />
+    <fragment
+        android:id="@+id/booksForExchangeFragment"
+        android:name="com.example.bookinder.MyProfile.ui.BooksForExchange.BooksForExchangeFragment"
+        android:label="My books for exchange"
+        tools:layout="@layout/fragment_books_for_exchange" />
+    <fragment
+        android:id="@+id/wishlistFragment"
+        android:name="com.example.bookinder.MyProfile.ui.Wishlist.WishlistFragment"
+        android:label="My wishlist"
+        tools:layout="@layout/fragment_wishlist" />
+</navigation>

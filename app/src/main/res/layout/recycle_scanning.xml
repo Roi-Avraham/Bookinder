@@ -13,15 +13,15 @@
     app:layout_constraintTop_toTopOf="parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp">
 
 
         <ImageView
             android:id="@+id/contactImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100sp"
+            android:layout_height="100sp"
             android:clipToOutline="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -29,11 +29,11 @@
             app:srcCompat="@android:mipmap/sym_def_app_icon" />
 
         <Button
-            android:id="@+id/signup_btn"
+            android:id="@+id/see_the_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toEndOf="@+id/contactImage"
-            android:layout_marginStart="200sp"
+            android:layout_marginStart="100sp"
             android:text="See the list"
             tools:ignore="MissingConstraints" />
 

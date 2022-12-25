@@ -37,7 +37,14 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         Button Register = (Button) findViewById(R.id.signup_btn);
-
+        TextView move_to_login = findViewById(R.id.move_to_login);
+        move_to_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
         Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -109,7 +116,7 @@ public class RegisterActivity extends AppCompatActivity {
 
             RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), registrationForm.toString());
 
-            postRequest("http://192.168.1.169:5000", body);
+            postRequest("http://192.168.1.170:5000", body);
         }
     }
 
