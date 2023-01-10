@@ -6,7 +6,10 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentResolver;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,21 +24,26 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 
+import com.example.bookinder.CurrentUser;
 import com.example.bookinder.MainActivity;
 import com.example.bookinder.MyProfile.MyProfileActivity;
 import com.example.bookinder.MyProfile.ui.Profile.ProfileFragment;
 import com.example.bookinder.Profile.Profile_activity;
+import com.example.bookinder.ProfileExpansion.ProfileExpansion;
 import com.example.bookinder.R;
+import com.example.bookinder.ServerAddress;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.MediaType;
+import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
@@ -47,15 +55,16 @@ public class UplodingBook extends AppCompatActivity implements BottomNavigationV
     ActivityResultLauncher<String> mTakePhoto;
     RadioButton genderradioButton;
     RadioGroup radioGroup;
-
+    byte[] book_image;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_uploding_book);
         radioGroup= findViewById(R.id.radioGroup);
 
-        Intent intent = getIntent();
-        String current_user = intent.getStringExtra("current_user");
+        //Intent intent = getIntent();
+        String current_user = CurrentUser.currentUser;
+
 
         /******************************************/
         bottomNavigationView = findViewById(R.id.button_navigation);
@@ -64,10 +73,7 @@ public class UplodingBook extends AppCompatActivity implements BottomNavigationV
         bottomNavigationView.getMenu().findItem(R.id.nav_cart).setChecked(true);
         /******************************************/
 
-        String book_name = findViewById(R.id.name_of_the_book).toString();
-        String writer_name = findViewById(R.id.name_of_writer).toString();
-        EditText priceEdit = findViewById(R.id.price);
-        String price = priceEdit.getText().toString().trim();
+
         Button uploadBookImage = findViewById(R.id.upload);
         int selectedId = radioGroup.getCheckedRadioButtonId();
         genderradioButton = findViewById(selectedId);
@@ -91,10 +97,15 @@ public class UplodingBook extends AppCompatActivity implements BottomNavigationV
                 new ActivityResultCallback<Uri>() {
                     @Override
                     public void onActivityResult(Uri result) {
-                        bookPicture.setImageURI(result);
                         if(result!=null) {
-                            System.out.println(String.valueOf(dropdown.getSelectedItem()));
-                            //sendBookImage(result,current_user);
+                            bookPicture.setImageURI(result);
+                            ContentResolver contentResolver = getContentResolver();
+                            try {
+                                InputStream inputStream = contentResolver.openInputStream(result);
+                                Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+                                book_image = ProfileExpansion.convertBitMapToString(bitmap);
+                            } catch (Exception e){
+                            }
                         }
                     }
                 }
@@ -108,6 +119,12 @@ public class UplodingBook extends AppCompatActivity implements BottomNavigationV
 
 
         done.setOnClickListener(view -> {
+            EditText book_name_text = findViewById(R.id.name_of_the_book);
+            EditText writer_name_text = findViewById(R.id.name_of_writer);
+            String book_name = book_name_text.getText().toString().trim();
+            String writer_name = writer_name_text.getText().toString().trim();
+            EditText priceEdit = findViewById(R.id.price);
+            String price = priceEdit.getText().toString().trim();
             String genre = String.valueOf(dropdown.getSelectedItem());
             if(sale.isChecked()) {
                 if (price.length() == 0) {
@@ -117,6 +134,9 @@ public class UplodingBook extends AppCompatActivity implements BottomNavigationV
             } else {
                 sendToServer(current_user,book_name,writer_name,genre,"exchange","0");
             }
+            Intent intent = new  Intent(UplodingBook.this, MainActivity.class);
+            UplodingBook.this.startActivity(intent);
+
         });
     }
 
@@ -132,10 +152,10 @@ public class UplodingBook extends AppCompatActivity implements BottomNavigationV
         }
     }
 
-    public boolean onCreateOptionsMenu(@NonNull Menu menu) {
-        getMenuInflater().inflate(R.menu.bottom_nav_menu, menu);
-        return true;
-    }
+//    public boolean onCreateOptionsMenu(@NonNull Menu menu) {
+//        getMenuInflater().inflate(R.menu.bottom_nav_menu, menu);
+//        return true;
+//    }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Intent intent;
@@ -151,19 +171,19 @@ public class UplodingBook extends AppCompatActivity implements BottomNavigationV
         }
         return false;
     }
-    public void sendBookImage(Uri result, String current_user) {
-        JSONObject bookImageForm = new JSONObject();
-        try {
-            bookImageForm.put("current_user", current_user);
-            bookImageForm.put("book_image", result.toString());
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), bookImageForm.toString());
-
-        postRequest("http://192.168.1.169:5000/getBookImage", body);
-    }
+//    public void sendBookImage(String result, String current_user) {
+//        JSONObject bookImageForm = new JSONObject();
+//        try {
+//            bookImageForm.put("current_user", current_user);
+//            bookImageForm.put("book_image", result);
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//
+//        RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), bookImageForm.toString());
+//
+//        postRequest("http://192.168.1.169:5000/getBookImage", body);
+//    }
     public  void sendToServer(String current_user, String book_name, String writer_name,
                               String genre, String method, String price) {
         JSONObject uploadBookForm = new JSONObject();
@@ -177,10 +197,14 @@ public class UplodingBook extends AppCompatActivity implements BottomNavigationV
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        RequestBody requestBody = new MultipartBody.Builder()
+                .setType(MultipartBody.FORM)
+                .addFormDataPart("card",uploadBookForm.toString())
+                .addFormDataPart("image","image.png",
+                        RequestBody.create(MediaType.parse("image/png"),book_image)).build();
+        //RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), uploadBookForm.toString());
 
-        RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), uploadBookForm.toString());
-
-        postRequest("http://192.168.1.169:5000/getBookImage", body);
+        postRequest(ServerAddress.serverAddress +"/upload_book", requestBody);
     }
     public void postRequest(String postUrl, RequestBody postBody) {
         OkHttpClient client = new OkHttpClient();

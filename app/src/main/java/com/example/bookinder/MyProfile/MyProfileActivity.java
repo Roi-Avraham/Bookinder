@@ -2,7 +2,12 @@ package com.example.bookinder.MyProfile;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import com.example.bookinder.CurrentUser;
+import com.example.bookinder.OtherUser;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.navigation.NavController;
@@ -28,13 +33,14 @@ public class MyProfileActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMyProfile.toolbar);
-//        binding.appBarMyProfile.fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
+
+
+        NavigationView navView = (NavigationView) findViewById(R.id.nav_view);
+        View headerView = navView.getHeaderView(0);
+        LinearLayout navHeader = (LinearLayout) headerView.findViewById(R.id.nav_header);
+        TextView textView = navHeader.findViewById(R.id.name);
+        textView.setText(CurrentUser.name);
+
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each

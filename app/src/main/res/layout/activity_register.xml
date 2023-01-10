@@ -23,43 +23,50 @@
         <TextView
             android:id="@+id/sin"
             android:layout_width="150sp"
-            android:layout_height="wrap_content"
+            android:layout_height="38dp"
             android:layout_marginBottom="15sp"
-            android:textSize="30sp"
             android:ems="10"
-            android:layout_gravity="center"
             android:hint="Sign up"
             android:minHeight="48dp"
-            android:textColorHint="@color/black" />
+            android:textColorHint="@color/black"
+            android:textSize="30sp" />
 
         <EditText
-            android:background="@color/white"
             android:id="@+id/signup_user_name"
+            android:drawableStart="@drawable/ic_baseline_person_24"
+            android:drawablePadding="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
             android:ems="10"
+            android:textStyle="bold"
             android:hint="Name"
+            android:background="@drawable/rounded_corners"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:textColorHint="@color/black"
             tools:ignore="HardcodedText" />
 
         <EditText
-            android:background="@color/white"
+            android:background="@drawable/rounded_corners"
             android:id="@+id/signup_email"
+            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:drawablePadding="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15sp"
             android:ems="10"
             android:hint="Email"
+            android:textStyle="bold"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:textColorHint="@color/black" />
 
         <EditText
-            android:background="@color/white"
+            android:background="@drawable/rounded_corners"
             android:id="@+id/signup_password"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:drawablePadding="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15sp"
@@ -67,39 +74,49 @@
             android:hint="@string/register_etPassword"
             android:inputType="textPassword"
             android:minHeight="48dp"
+            android:textStyle="bold"
             android:textColorHint="@color/black" />
 
         <EditText
-            android:background="@color/white"
+            android:background="@drawable/rounded_corners"
             android:id="@+id/signup_confirm_password"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:drawablePadding="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15sp"
             android:ems="10"
+            android:textStyle="bold"
             android:hint="@string/register_etConfirmPassword"
             android:inputType="textPassword"
             android:minHeight="48dp"
             android:textColorHint="@color/black" />
         <EditText
-            android:background="@color/white"
+            android:background="@drawable/rounded_corners"
             android:id="@+id/signup_age"
+            android:drawableStart="@drawable/ic_baseline_man_3_24"
+            android:drawablePadding="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15sp"
             android:ems="10"
             android:hint="Age"
+            android:textStyle="bold"
             android:inputType="text"
             android:minHeight="48dp"
             android:textColorHint="@color/black" />
         <EditText
-            android:background="@color/white"
+            android:background="@drawable/rounded_corners"
             android:id="@+id/signup_phone"
+            android:drawableStart="@drawable/ic_baseline_phone_iphone_24"
+            android:drawablePadding="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:ems="10"
             android:hint="Phone number"
             android:inputType="text"
+            android:textStyle="bold"
             android:minHeight="48dp"
             android:textColorHint="@color/black" />
         <TextView
@@ -123,11 +140,13 @@
             android:layout_marginBottom="10dp"
             android:textColorHint="@color/black"
             android:typeface="monospace"
+            android:textStyle="bold"
             android:hint="Already have an account?\n click here to login" />
 
         <Button
             android:id="@+id/signup_btn"
-            android:layout_width="wrap_content"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/register_bt" />

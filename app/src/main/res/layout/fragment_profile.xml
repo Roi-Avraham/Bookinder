@@ -43,6 +43,7 @@
                 android:layout_height="wrap_content"/>
         </LinearLayout>
         <include
+            android:id="@+id/item_image"
             android:layout_gravity="center"
             layout="@layout/item_image"
             android:layout_height="wrap_content"
@@ -56,9 +57,15 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <include layout="@layout/item_info"/>
-                <include layout="@layout/item_email"/>
-                <include layout="@layout/item_favorite_books"/>
+                <include
+                    android:id="@+id/item_phone"
+                    layout="@layout/item_info"/>
+                <include
+                    android:id="@+id/item_mail"
+                    layout="@layout/item_email"/>
+                <include
+                    android:id="@+id/item_genres"
+                    layout="@layout/item_favorite_books"/>
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

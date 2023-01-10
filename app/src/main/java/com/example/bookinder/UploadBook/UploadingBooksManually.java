@@ -12,9 +12,11 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.bookinder.CurrentUser;
 import com.example.bookinder.MainActivity;
 import com.example.bookinder.ProfileExpansion.ProfileExpansion;
 import com.example.bookinder.R;
+import com.example.bookinder.ServerAddress;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 
@@ -41,8 +43,7 @@ public class UploadingBooksManually extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_manually);
 
-        Intent intent = getIntent();
-        String current_user = intent.getStringExtra("current_user");
+        String current_user = CurrentUser.currentUser;
 
         Button done = findViewById(R.id.doneBtn);
         FloatingActionButton floatingActionButton = findViewById(R.id.floatingActionButton);
@@ -51,7 +52,6 @@ public class UploadingBooksManually extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new  Intent(UploadingBooksManually.this, ProfileExpansion.class);
-                intent.putExtra("current_user", current_user);
                 UploadingBooksManually.this.startActivity(intent);
             }
         });
@@ -59,11 +59,9 @@ public class UploadingBooksManually extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new  Intent(UploadingBooksManually.this, AddBookLoveActivity.class);
-                intent.putExtra("current_user", current_user);
                 UploadingBooksManually.this.startActivity(intent);
             }
         });
-
 
         JSONObject UploadingForm = new JSONObject();
         try {
@@ -73,7 +71,7 @@ public class UploadingBooksManually extends AppCompatActivity {
         }
         RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), UploadingForm.toString());
 
-        postRequest("http://192.168.1.170:5000/getBooksYouEntered", body);
+        postRequest(ServerAddress.serverAddress + "/getBooksYouEntered", body);
     }
 
     public void postRequest(String postUrl, RequestBody postBody) {

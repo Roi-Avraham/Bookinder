@@ -1,6 +1,7 @@
 package com.example.bookinder.UploadBook;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
@@ -8,12 +9,16 @@ import android.widget.ImageView;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.bookinder.CurrentUser;
 import com.example.bookinder.R;
+import com.example.bookinder.ServerAddress;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -28,12 +33,29 @@ public class ScanShelfActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_scanned_books);
+        setContentView(R.layout.activity_scan_a_shelf);
 
         Intent intent = getIntent();
-        String current_user = intent.getStringExtra("current_user");
-        String scanned_image = intent.getStringExtra("scanned_image");
+        String current_user = CurrentUser.currentUser;
+        if (intent.hasExtra("scanned_image")) {
+            String scanned_image = intent.getStringExtra("scanned_image");
+            Uri uri = Uri.parse(scanned_image);
+            String str = uri.toString();
+            URL url = null;
+            try {
+                url = new URL(str);
+                scanned_image = url.toString();
+                sendScan(current_user,scanned_image);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+        }
 
+
+
+
+    }
+    public void sendScan(String current_user, String scanned_image) {
         JSONObject profileImageForm = new JSONObject();
         try {
             profileImageForm.put("current_user", current_user);
@@ -41,10 +63,9 @@ public class ScanShelfActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
         RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), profileImageForm.toString());
 
-        postRequest("http://192.168.1.169:5000/", body);
+        postRequest(ServerAddress.serverAddress, body);
     }
     public void postRequest(String postUrl, RequestBody postBody) {
         OkHttpClient client = new OkHttpClient();

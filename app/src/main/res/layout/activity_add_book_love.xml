@@ -7,12 +7,11 @@
     android:background="@mipmap/background">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginBottom="110dp"
         app:layout_constraintVertical_bias="0.727"
         tools:layout_editor_absoluteX="0dp">
 
@@ -20,34 +19,37 @@
             android:id="@+id/sin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50sp"
             android:textSize="30sp"
             android:ems="10"
+            android:textStyle="bold"
             android:hint="Add book you love"
             android:minHeight="48dp"
+            android:layout_marginBottom="20dp"
             android:textColorHint="@color/black" />
 
         <EditText
-            android:background="@color/white"
+            android:background="@drawable/rounded_corners"
             android:id="@+id/name_of_the_book"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:ems="10"
             android:hint="Name"
+            android:textStyle="bold"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:textColorHint="@color/black"
             tools:ignore="HardcodedText" />
 
         <EditText
-            android:background="@color/white"
+            android:background="@drawable/rounded_corners"
             android:id="@+id/writer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:ems="10"
             android:hint="Writer"
+            android:textStyle="bold"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:textColorHint="@color/black"/>
@@ -55,6 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
+            android:textStyle="bold"
             android:ems="10"
             android:hint="Genre:"
             android:minHeight="48dp"
@@ -69,6 +72,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
+            android:textStyle="bold"
             android:ems="10"
             android:hint="Rate:"
             android:minHeight="48dp"
@@ -77,6 +81,7 @@
             android:id="@+id/spinner2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
             android:background="@android:drawable/btn_dropdown"
             android:spinnerMode="dropdown"/>
 
@@ -114,12 +119,13 @@
 <!--                    android:textSize="24sp"-->
 <!--                    android:typeface="monospace"-->
 <!--                    tools:text="Test Text" />-->
-
         <Button
             android:id="@+id/adding_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:textStyle="bold"
             android:text="add" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

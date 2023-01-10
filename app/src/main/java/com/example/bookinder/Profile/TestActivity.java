@@ -3,6 +3,7 @@ package com.example.bookinder.Profile;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -11,6 +12,10 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.example.bookinder.OtherUser;
+import com.example.bookinder.Profile.ui.gallery.GalleryFragment;
+import com.example.bookinder.Profile.ui.home.HomeFragment;
+import com.example.bookinder.Profile.ui.slideshow.SlideshowFragment;
 import com.example.bookinder.R;
 import com.example.bookinder.databinding.ActivityTestBinding;
 import com.google.android.material.navigation.NavigationView;
@@ -29,13 +34,14 @@ public class TestActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarTest.toolbar);
-//        binding.appBarTest.fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
+
+//        View headerView = findViewById(R.id.nav_view);
+//        TextView textView = headerView.findViewById(R.id.name);
+//        textView.setText(OtherUser.name);
+
+
+
+
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each

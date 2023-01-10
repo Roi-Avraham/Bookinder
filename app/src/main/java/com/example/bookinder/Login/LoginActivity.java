@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.bookinder.CurrentUser;
 import com.example.bookinder.R;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -107,13 +109,15 @@ public class LoginActivity extends AppCompatActivity {
                         try {
                             String loginResponseString = response.body().string().trim();
                             Log.d("LOGIN", "Response from the server : " + loginResponseString);
-                            if (loginResponseString.equals("success")) {
-                                Log.d("LOGIN", "Successful Login");
+                            if (loginResponseString.equals("failure")) {
+                                responseTextLogin.setText("Login Failed. Invalid username or password.");
+                            } else{
+                                JSONObject jsonObject = new JSONObject(loginResponseString);
+                                CurrentUser.currentUser = jsonObject.getString("id");
+                                CurrentUser.name = jsonObject.getString("name");
                                 Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                                 startActivity(intent);
                                 finish();//finishing activity and return to the calling activity.
-                            } else if (loginResponseString.equals("failure")) {
-                                responseTextLogin.setText("Login Failed. Invalid username or password.");
                             }
                         } catch (Exception e) {
                             e.printStackTrace();

@@ -30,6 +30,7 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"/>
                 <TextView
+                    android:id="@+id/bookName"
                     android:text="Harry Poter"
                     android:textSize="16sp"
                     android:layout_margin="5dp"
@@ -51,6 +52,7 @@
                 android:layout_gravity="center"
                 />
                 <TextView
+                    android:id="@+id/bookMethod"
                     android:text="For sale | 30$"
                     android:textStyle="bold"
                     android:textColor="@color/black"

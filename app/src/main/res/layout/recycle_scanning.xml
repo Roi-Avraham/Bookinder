@@ -32,9 +32,12 @@
             android:id="@+id/see_the_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@+id/contactImage"
-            android:layout_marginStart="100sp"
+            android:layout_gravity="center"
+            android:layout_marginStart="150sp"
             android:text="See the list"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/contactImage"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

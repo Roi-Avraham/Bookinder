@@ -27,6 +27,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                 <ImageView
+                    android:id="@+id/goBack"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_baseline_arrow_back_24"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
+                <ImageView
                     android:padding="5dp"
                     android:src="@drawable/ic_baseline_menu_book_24"
                     android:layout_width="35dp"
@@ -34,16 +40,19 @@
                 <TextView
                     android:id="@+id/name_of_the_book"
                     android:text="Harry Poter"
-                    android:textSize="16sp"
+                    android:textSize="20sp"
                     android:layout_margin="5dp"
                     android:textStyle="bold|normal"
                     android:textColor="#F8554A4A"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
+
             </LinearLayout>
+
         </RelativeLayout>
         <LinearLayout
             android:orientation="vertical"
+            android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <LinearLayout
@@ -51,8 +60,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             <com.google.android.material.imageview.ShapeableImageView
-                android:layout_width="98dp"
-                android:layout_height="98dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:layout_centerHorizontal="true"
                 android:elevation="15dp"
                 android:padding="5dp"
@@ -64,13 +73,19 @@
                     android:text="Noam Gini"
                     android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="20sp"
                     android:layout_gravity="center"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200sp"
                     android:layout_height="wrap_content"/>
+                <ImageView
+                    android:id="@+id/heart_icon"
+                    android:src="@drawable/ic_sharp_favorite_border_24"
+                    android:layout_width="60dp"
+                    android:layout_gravity="center"
+                    android:layout_height="60dp"/>
             </LinearLayout>
             <ImageView
                 android:id="@+id/bookImage"
@@ -81,68 +96,70 @@
                 />
             <LinearLayout
                 android:orientation="horizontal"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
                 android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/name_of_the_writer"
                 android:text="Writer: JK roling"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:textSize="18sp"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="15dp"
+                android:textSize="20sp"
+                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
                 <TextView
                     android:text="|"
                     android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="20sp"
+                    android:layout_gravity="center"
                     android:layout_marginStart="5dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <TextView
                     android:id="@+id/genre"
                     android:text="Genre: Fantasy"
                     android:textStyle="bold"
+                    android:layout_gravity="center"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginBottom="15dp"
+                    android:textSize="20sp"
+                    android:layout_marginStart="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
             <TextView
+                android:id="@+id/orderMethod"
                 android:text="Make purchase request"
                 android:textStyle="bold"
+                android:layout_gravity="center"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:layout_marginStart="100dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <ImageView
+                android:id="@+id/icon"
                 android:padding="5dp"
                 android:src="@drawable/ic_outline_shopping_cart_black"
-                android:layout_marginStart="170dp"
+                android:layout_gravity="center"
                 android:layout_width="60dp"
                 android:layout_height="60dp"/>
             <TextView
                 android:id="@+id/price"
-                android:text="Price: 50$"
+                android:text = "price:50$"
                 android:textStyle="bold"
+                android:layout_gravity="center"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:layout_marginStart="160dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+
         </LinearLayout>
 
     </LinearLayout>

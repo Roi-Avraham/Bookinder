@@ -12,9 +12,11 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.bookinder.CurrentUser;
 import com.example.bookinder.ProfileExpansion.ProfileExpansion;
 import com.example.bookinder.R;
 import com.example.bookinder.Register.RegisterActivity;
+import com.example.bookinder.ServerAddress;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -63,17 +65,14 @@ public class AddBookLoveActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 add(view);
-                Intent intent = getIntent();
-                String current_user = intent.getStringExtra("current_user");
-                intent = new  Intent(AddBookLoveActivity.this, UploadingBooksManually.class);
-                intent.putExtra("current_user",current_user);
+                Intent intent = new  Intent(AddBookLoveActivity.this, UploadingBooksManually.class);
+                //intent.putExtra("current_user",current_user);
                 AddBookLoveActivity.this.startActivity(intent);
             }
         });
     }
     public void add(View view) {
-        Intent intent = getIntent();
-        String current_user = intent.getStringExtra("current_user");
+        String current_user = CurrentUser.currentUser;
         EditText name_of_bookV = findViewById(R.id.name_of_the_book);
         EditText name_of_writerV = findViewById(R.id.writer);
 
@@ -97,7 +96,7 @@ public class AddBookLoveActivity extends AppCompatActivity {
 
         RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), addingForm.toString());
 
-        postRequest("http://192.168.1.170:5000/addbookmanually", body);
+        postRequest(ServerAddress.serverAddress+"/addbookmanually", body);
     }
 
     public void postRequest(String postUrl, RequestBody postBody) {

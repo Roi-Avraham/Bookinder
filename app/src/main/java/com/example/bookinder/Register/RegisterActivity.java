@@ -9,10 +9,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.bookinder.CurrentUser;
 import com.example.bookinder.Login.LoginActivity;
 import com.example.bookinder.MainActivity;
 import com.example.bookinder.ProfileExpansion.ProfileExpansion;
 import com.example.bookinder.R;
+import com.example.bookinder.ServerAddress;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -71,6 +73,7 @@ public class RegisterActivity extends AppCompatActivity {
         boolean flag = true;
         if(name.length() == 0) {
             nameView.setError("Name is required");
+            CurrentUser.name = name;
             flag = false;
         }
         if(username.length() == 0) {
@@ -116,7 +119,7 @@ public class RegisterActivity extends AppCompatActivity {
 
             RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), registrationForm.toString());
 
-            postRequest("http://192.168.1.170:5000", body);
+            postRequest(ServerAddress.serverAddress, body);
         }
     }
 
@@ -153,18 +156,17 @@ public class RegisterActivity extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            if (responseString.equals("success")) {
-                                responseTextRegister.setText("Registration completed successfully.");
-                                EditText usernameView = findViewById(R.id.signup_email);
-                                String username = usernameView.getText().toString().trim();
-                                Intent intent = new Intent(RegisterActivity.this, ProfileExpansion.class);
-                                intent.putExtra("current_user",username);
-                                startActivity(intent);
-                                finish();
-                            } else if (responseString.equals("Another user used this email. Please chose another email.")) {
+                            if (responseString.equals("Another user used this email. Please chose another email.")) {
                                 responseTextRegister.setText("Email already exists. Please chose another email.");
                             } else {
-                                responseTextRegister.setText("Something went wrong. Please try again later.");
+                                responseTextRegister.setText("Registration completed successfully.");
+//                                EditText usernameView = findViewById(R.id.signup_email);
+//                                String username = usernameView.getText().toString().trim();
+                                CurrentUser.currentUser = responseString;
+                                Intent intent = new Intent(RegisterActivity.this, ProfileExpansion.class);
+                                //intent.putExtra("current_user",username);
+                                startActivity(intent);
+                                finish();
                             }
                         }
                     });
