@@ -29,6 +29,7 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -41,7 +42,7 @@ import okhttp3.Response;
 public class BooksForSaleFragment extends Fragment {
 
     private FragmentBooksForSaleBinding binding;
-    String current_user = CurrentUser.currentUser;
+    String current_user = CurrentUser.getCurrentUser();
     ArrayList<ItemBookData> itemBooksData = new ArrayList<ItemBookData>();
     RecyclerView recyclerView;
     View view;
@@ -68,6 +69,8 @@ public class BooksForSaleFragment extends Fragment {
         RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), bookForSaleForm.toString());
 
         postRequest(ServerAddress.serverAddress+"/items/sale/" + current_user, body);
+        System.out.println("Hello world!:  " + current_user);
+
 
         return root;
     }
@@ -80,7 +83,9 @@ public class BooksForSaleFragment extends Fragment {
 
 
     public void postRequest(String postUrl, RequestBody postBody) {
-        OkHttpClient client = new OkHttpClient();
+        OkHttpClient client = new OkHttpClient.Builder()
+                .readTimeout(30, TimeUnit.SECONDS)
+                .build();
 
         final Request request = new Request.Builder()
                 .url(postUrl)
@@ -127,7 +132,9 @@ public class BooksForSaleFragment extends Fragment {
 
 
     public void postRequestCard(String postUrl, RequestBody postBody) {
-        OkHttpClient client = new OkHttpClient();
+        OkHttpClient client = new OkHttpClient.Builder()
+                .readTimeout(30, TimeUnit.SECONDS)
+                .build();
 
         final Request request = new Request.Builder()
                 .url(postUrl)

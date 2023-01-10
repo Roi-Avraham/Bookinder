@@ -3,6 +3,7 @@ package com.example.bookinder.MyProfile;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -18,6 +19,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.bookinder.R;
 import com.example.bookinder.databinding.ActivityMyProfileBinding;
+import com.squareup.picasso.Picasso;
 
 
 public class MyProfileActivity extends AppCompatActivity {
@@ -40,6 +42,10 @@ public class MyProfileActivity extends AppCompatActivity {
         LinearLayout navHeader = (LinearLayout) headerView.findViewById(R.id.nav_header);
         TextView textView = navHeader.findViewById(R.id.name);
         textView.setText(CurrentUser.name);
+        ImageView profile_pic = navHeader.findViewById(R.id.profile_pic);
+        if (CurrentUser.profile_picture != null) {
+            Picasso.get().load(CurrentUser.profile_picture).into(profile_pic);
+        }
 
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;

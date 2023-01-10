@@ -28,6 +28,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -59,14 +60,14 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         JSONObject bookForSaleForm = new JSONObject();
         try {
-            bookForSaleForm.put("current_user", CurrentUser.currentUser);
+            bookForSaleForm.put("current_user",  CurrentUser.getCurrentUser());
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
         RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), bookForSaleForm.toString());
 
-        postRequest(ServerAddress.serverAddress+"/home/" + CurrentUser.currentUser, body);
+        postRequest(ServerAddress.serverAddress+"/home/" +  CurrentUser.getCurrentUser(), body);
 
     }
 //    public boolean onCreateOptionsMenu(@NonNull Menu menu) {
@@ -91,7 +92,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
 
     public void postRequest(String postUrl, RequestBody postBody) {
-        OkHttpClient client = new OkHttpClient();
+        OkHttpClient client = new OkHttpClient.Builder()
+                .readTimeout(30, TimeUnit.SECONDS)
+                .build();
 
         final Request request = new Request.Builder()
                 .url(postUrl)
@@ -110,6 +113,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             public void onResponse(Call call, final Response response) {
                 try {
                     final String responseString = response.body().string().trim();
+                    System.out.println("res is: " + responseString);
                     Gson gson = new Gson();
                     String[] all_cards = gson.fromJson(responseString, String[].class);
                     runOnUiThread(new Runnable() {
@@ -138,7 +142,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
 
     public void postRequestCard(String postUrl, RequestBody postBody) {
-        OkHttpClient client = new OkHttpClient();
+        OkHttpClient client = new OkHttpClient.Builder()
+                .readTimeout(100, TimeUnit.SECONDS)
+                .build();
 
         final Request request = new Request.Builder()
                 .url(postUrl)
@@ -160,6 +166,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                     String title = jsonObject.getString("title");
                     String method = jsonObject.getString("method");
                     String book_image = jsonObject.getString("book_image");
+                    System.out.println("the image is: " + book_image);
                     String author = jsonObject.getString("author");
                     String price = jsonObject.getString("price");
                     String genre = jsonObject.getString("genre");

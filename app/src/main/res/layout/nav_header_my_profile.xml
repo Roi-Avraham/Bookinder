@@ -14,6 +14,7 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profile_pic"
         android:layout_width="98dp"
         android:layout_height="98dp"
         android:layout_marginTop="12dp"
@@ -30,8 +31,7 @@
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="Noam Gini"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-<!--    <TextView-->
+    <!--    <TextView-->
 <!--        android:id="@+id/textView"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->

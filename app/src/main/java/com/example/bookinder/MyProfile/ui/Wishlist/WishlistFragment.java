@@ -39,7 +39,7 @@ import okhttp3.Response;
 public class WishlistFragment extends Fragment {
 
     private FragmentWishlistBinding binding;
-    String current_user = CurrentUser.currentUser;
+    String current_user = CurrentUser.getCurrentUser();
     ArrayList<ItemBookData> itemBooksData = new ArrayList<ItemBookData>();
     RecyclerView recyclerView;
     View view;
@@ -94,6 +94,7 @@ public class WishlistFragment extends Fragment {
             public void onResponse(Call call, final Response response) {
                 try {
                     final String responseString = response.body().string().trim();
+                    System.out.println("res is: " + responseString);
                     Gson gson = new Gson();
                     String[] all_cards = gson.fromJson(responseString, String[].class);
                     getActivity().runOnUiThread(new Runnable() {

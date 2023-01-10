@@ -34,6 +34,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -47,7 +48,7 @@ public class ProfileFragment extends Fragment implements BottomNavigationView.On
 
     private FragmentProfileBinding binding;
     BottomNavigationView bottomNavigationView;
-    String current_user = CurrentUser.currentUser;
+    String current_user = CurrentUser.getCurrentUser();
     View view;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -99,7 +100,9 @@ public class ProfileFragment extends Fragment implements BottomNavigationView.On
     }
 
     public void postRequest(String postUrl, RequestBody postBody) {
-        OkHttpClient client = new OkHttpClient();
+        OkHttpClient client = new OkHttpClient.Builder()
+                .readTimeout(100, TimeUnit.SECONDS)
+                .build();
 
         final Request request = new Request.Builder()
                 .url(postUrl)
@@ -154,14 +157,9 @@ public class ProfileFragment extends Fragment implements BottomNavigationView.On
                             }else {
                                 genreView.setText(genres);
                             }
-
-//                            Uri uri = Uri.parse(profile_image);
                             ImageView imageView =  includedLayout1.findViewById(R.id.user_image);
-//                            imageView.setImageURI(uri);
-                            //Glide.with(getActivity()).load(profile_image).into(imageView);
                             Picasso.get().load(profile_image).into(imageView);
-
-
+                            CurrentUser.profile_picture = profile_image;
                         }
                     });
                 } catch (Exception e) {

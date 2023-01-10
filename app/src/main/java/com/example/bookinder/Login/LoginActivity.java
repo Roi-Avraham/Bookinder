@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.bookinder.MainActivity;
 import com.example.bookinder.Register.RegisterActivity;
+import com.example.bookinder.ServerAddress;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -69,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
 
         RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), loginForm.toString());
 
-        postRequest("http://192.168.1.169:5000", body);
+        postRequest(ServerAddress.serverAddress, body);
     }
 
     public void postRequest(String postUrl, RequestBody postBody) {
@@ -113,8 +114,9 @@ public class LoginActivity extends AppCompatActivity {
                                 responseTextLogin.setText("Login Failed. Invalid username or password.");
                             } else{
                                 JSONObject jsonObject = new JSONObject(loginResponseString);
-                                CurrentUser.currentUser = jsonObject.getString("id");
+                                CurrentUser.setCurrentUser(jsonObject.getString("id"));
                                 CurrentUser.name = jsonObject.getString("name");
+                                CurrentUser.profile_picture = jsonObject.getString("profile_picture");
                                 Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                                 startActivity(intent);
                                 finish();//finishing activity and return to the calling activity.

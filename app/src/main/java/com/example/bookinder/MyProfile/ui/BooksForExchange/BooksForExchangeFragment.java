@@ -25,6 +25,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -37,7 +38,7 @@ import okhttp3.Response;
 public class BooksForExchangeFragment extends Fragment {
 
     private FragmentBooksForExchangeBinding binding;
-    String current_user = CurrentUser.currentUser;;
+    String current_user = CurrentUser.getCurrentUser();
     ArrayList<ItemBookData> itemBooksData = new ArrayList<ItemBookData>();
     RecyclerView recyclerView;
     View view;
@@ -77,7 +78,9 @@ public class BooksForExchangeFragment extends Fragment {
 
 
     public void postRequest(String postUrl, RequestBody postBody) {
-        OkHttpClient client = new OkHttpClient();
+        OkHttpClient client = new OkHttpClient.Builder()
+                .readTimeout(30, TimeUnit.SECONDS)
+                .build();
 
         final Request request = new Request.Builder()
                 .url(postUrl)
@@ -124,7 +127,9 @@ public class BooksForExchangeFragment extends Fragment {
 
 
     public void postRequestCard(String postUrl, RequestBody postBody) {
-        OkHttpClient client = new OkHttpClient();
+        OkHttpClient client = new OkHttpClient.Builder()
+                .readTimeout(30, TimeUnit.SECONDS)
+                .build();
 
         final Request request = new Request.Builder()
                 .url(postUrl)
